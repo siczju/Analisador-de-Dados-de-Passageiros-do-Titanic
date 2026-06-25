@@ -39,7 +39,7 @@ while True:
         analise_titanic.estatisticas_idade()
 
     elif opcao == "6":
-        print(estatisticas_fare(dados))
+        analise_titanic.estatisticas_fare()
 
     elif opcao == "7":
         analise_titanic.frequencia_coluna()
@@ -48,22 +48,22 @@ while True:
         analise_titanic.taxa_sobrevivencia_geral()
 
     elif opcao == "9":
-        print(taxa_por_sexo(dados))
+        analise_titanic.taxa_por_sexo()
 
     elif opcao == "10":
-        print(taxa_por_classe(dados))
+        analise_titanic.taxa_por_classe()
 
     elif opcao == "11":
-        print(media_familiares(dados))
+        analise_titanic.media_familiares()
 
     elif opcao == "12":
-        print(tarifas_por_porto(dados))
+        analise_titanic.tarifas_por_porto()
 
     elif opcao == "13":
-        print(dados_faltantes(dados))
+        analise_titanic.dados_faltantes()
 
     elif opcao == "14":
-        print(perfil_etario_por_classe(dados))
+        analise_titanic.perfil_etario_por_classe()
 
     elif opcao == "0":
         break
