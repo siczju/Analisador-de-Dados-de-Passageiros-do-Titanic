@@ -231,3 +231,30 @@ def taxa_sobrevivencia_geral():
         else:
             print("\n A taxa de sobrevivência da 3ª classe é: sem dados")
         print(f"")
+    
+def estatisticas_fare():
+
+    quantidade_tarifas_c = 0
+    quantidade_tarifas_q = 0
+    quantidade_tarifas_s = 0
+    tarifas_c = 0
+    tarifas_q = 0
+    tarifas_s = 0
+    
+    for i in range(len(arquivo_body)):
+        if arquivo_body[i][11] == 'C':
+            quantidade_tarifas_c += 1
+            tarifas_c += float(arquivo_body[i][9]) if arquivo_body[i][9] != '' else 0
+        elif arquivo_body[i][11] == 'Q':
+            quantidade_tarifas_q += 1
+            tarifas_q += float(arquivo_body[i][9]) if arquivo_body[i][9] != '' else 0
+        elif arquivo_body[i][11] == 'S':
+            quantidade_tarifas_s += 1
+            tarifas_s += float(arquivo_body[i][9]) if arquivo_body[i][9] != '' else 0
+
+    print(f"Tarifas C: {quantidade_tarifas_c}, Total: {tarifas_c}")
+    print(f"Tarifas Q: {quantidade_tarifas_q}, Total: {tarifas_q}")
+    print(f"Tarifas S: {quantidade_tarifas_s}, Total: {tarifas_s}")
+    print(f"Média de tarifas C: {tarifas_c / quantidade_tarifas_c if quantidade_tarifas_c > 0 else 0:.2f}")
+    print(f"Média de tarifas Q: {tarifas_q / quantidade_tarifas_q if quantidade_tarifas_q > 0 else 0:.2f}")
+    print(f"Média de tarifas S: {tarifas_s / quantidade_tarifas_s if quantidade_tarifas_s > 0 else 0:.2f}")
