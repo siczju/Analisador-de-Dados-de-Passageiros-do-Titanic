@@ -32,3 +32,116 @@ def estatisticas_idade():
     print(f"A média de todas idades é: {soma / quantidade_idades:.2f}")
     print(f"A maior idade é: {maiorIdade:.2f}")
     print(f"A menor idade é: {menorIdade:.2f}")
+
+def frequencia_coluna():
+    i = 0
+
+    try:
+        choose = int(input("\n Você quer ver a frequência de qual coluna:" \
+                            "\n  1 - Pclass" \
+                            "\n  2 - Sex" \
+                            "\n  3 - Embarked" \
+                            "\n  4 - Survived" \
+                            "\nEscolha: "))
+    except ValueError:
+        print("Opção inválida. Digite um número entre 1 e 4.")
+        return
+
+    if choose < 1 or choose > 4:
+        print("Opção inválida. Escolha uma opção entre 1 e 4.")
+        return
+
+    if choose == 1:
+    # Contador de Pclass(1,2,3)
+        contadorDe1 = 0
+        contadorDe2 = 0
+        contadorDe3 = 0
+
+        while i < len(arquivo_body):
+            if arquivo_body[i][2] != '':
+                try:
+                    Pclass = int(arquivo_body[i][2])
+                except ValueError:
+                    i += 1
+                    continue
+
+                if(Pclass == 1):
+                    contadorDe1 += 1
+                elif(Pclass == 2):
+                    contadorDe2 += 1
+                elif(Pclass == 3):
+                    contadorDe3 += 1
+
+            i += 1
+
+        print(f"Pclass 1: {contadorDe1} passageiros")
+        print(f"Pclass 2: {contadorDe2} passageiros")
+        print(f"Pclass 3: {contadorDe3} passageiros")
+
+    elif choose == 2:
+    # Contador de sexos (F,M)
+        contadorDeF = 0
+        contadorDeM = 0
+
+        while i < len(arquivo_body):
+            if arquivo_body[i][4] != '':
+                Sex = arquivo_body[i][4].strip().lower()
+
+                if Sex == 'female':
+                    contadorDeF += 1
+                elif Sex == 'male':
+                    contadorDeM += 1
+
+            i += 1
+
+        print(f"Male: {contadorDeM}")
+        print(f"Female: {contadorDeF}")
+
+    elif choose == 3:
+        # Contador de embarked (C,Q,S)
+
+        contadorDeC = 0
+        contadorDeQ = 0
+        contadorDeS = 0
+
+        while i < len(arquivo_body):
+            if arquivo_body[i][11] != '':
+                embarked = arquivo_body[i][11].strip().upper()
+
+                if embarked == 'C':
+                    contadorDeC += 1
+                elif embarked == 'Q':
+                    contadorDeQ += 1
+                elif embarked == 'S':
+                    contadorDeS += 1
+
+            i += 1
+
+        print(f"Embarked C: {contadorDeC}")
+        print(f"Embarked Q: {contadorDeQ}")
+        print(f"Embarked S: {contadorDeS}")
+
+    elif choose == 4:
+        # Contador de survived (0,1)
+
+        contadorDe0 = 0
+        contadorDe1 = 0
+
+        while i < len(arquivo_body):
+            if arquivo_body[i][1] != '':
+                try:
+                    Survived = int(arquivo_body[i][1])
+                except ValueError:
+                    i += 1
+                    continue
+
+                if(Survived == 0):
+                    contadorDe0 += 1
+                elif(Survived == 1):
+                    contadorDe1 += 1
+
+            i += 1
+
+        print(f"Survived 0: {contadorDe0}")
+        print(f"Survived 1: {contadorDe1}")
+

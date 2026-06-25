@@ -42,7 +42,7 @@ while True:
         print(estatisticas_fare(dados))
 
     elif opcao == "7":
-        print(frequencia_coluna(dados, 2))
+        analise_titanic.frequencia_coluna()
 
     elif opcao == "8":
         print(round(taxa_sobrevivencia_geral(dados), 2), "%")
