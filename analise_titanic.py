@@ -153,12 +153,19 @@ def taxa_sobrevivencia_geral():
         contadorDeM = 0
         contadorDe0F = 0
         contadorDe0M = 0
+        contadorClasse1 = 0
+        contadorClasse2 = 0
+        contadorClasse3 = 0
+        contadorMorteClasse1 = 0
+        contadorMorteClasse2 = 0
+        contadorMorteClasse3 = 0
 
         while i < len(arquivo_body):
-            if arquivo_body[i][1] != '' and arquivo_body[i][4] != '':
+            if arquivo_body[i][1] != '' and arquivo_body[i][4] != '' and arquivo_body[i][2] != '':
                 try:
                     Survived = int(arquivo_body[i][1])
                     Sex = arquivo_body[i][4].strip().lower()
+                    Pclass = int(arquivo_body[i][2])
                 except ValueError:
                     i += 1
                     continue
@@ -178,6 +185,19 @@ def taxa_sobrevivencia_geral():
                 elif(Survived == 0 and Sex == 'male'):
                     contadorDe0M += 1
 
+                if Pclass == 1:
+                    contadorClasse1 += 1
+                    if Survived == 0:
+                        contadorMorteClasse1 += 1
+                elif Pclass == 2:
+                    contadorClasse2 += 1
+                    if Survived == 0:
+                        contadorMorteClasse2 += 1
+                elif Pclass == 3:
+                    contadorClasse3 += 1
+                    if Survived == 0:
+                        contadorMorteClasse3 += 1
+
             i += 1
 
         if (contadorDe0 + contadorDe1) == 0:
@@ -195,4 +215,19 @@ def taxa_sobrevivencia_geral():
             print(f"\n A taxa de sobrevivência do homem é: {((contadorDeM - contadorDe0M) / contadorDeM) * 100:.2f}%")
         else:
             print("\n A taxa de sobrevivência do homem é: sem dados")
+
+        if contadorClasse1 > 0:
+            print(f"\n A taxa de sobrevivência da 1ª classe é: {((contadorClasse1 - contadorMorteClasse1) / contadorClasse1) * 100:.2f}%")
+        else:
+            print("\n A taxa de sobrevivência da 1ª classe é: sem dados")
+
+        if contadorClasse2 > 0:
+            print(f"\n A taxa de sobrevivência da 2ª classe é: {((contadorClasse2 - contadorMorteClasse2) / contadorClasse2) * 100:.2f}%")
+        else:
+            print("\n A taxa de sobrevivência da 2ª classe é: sem dados")
+
+        if contadorClasse3 > 0:
+            print(f"\n A taxa de sobrevivência da 3ª classe é: {((contadorClasse3 - contadorMorteClasse3) / contadorClasse3) * 100:.2f}%")
+        else:
+            print("\n A taxa de sobrevivência da 3ª classe é: sem dados")
         print(f"")
