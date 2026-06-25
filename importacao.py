@@ -9,7 +9,11 @@ def dados():
 
         with open("train.csv", "r", encoding='utf-8', newline='') as arquivo:
             listas = csv.reader(arquivo)
-            arquivo_body = list(listas)
+            matriz = []
+            for linha in listas:
+                matriz.append(linha)
+
+            arquivo_body = matriz
             arquivo_title = arquivo_body[0]
             del arquivo_body[0]
 

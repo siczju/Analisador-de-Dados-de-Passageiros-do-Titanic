@@ -45,7 +45,7 @@ while True:
         analise_titanic.frequencia_coluna()
 
     elif opcao == "8":
-        print(round(taxa_sobrevivencia_geral(dados), 2), "%")
+        analise_titanic.taxa_sobrevivencia_geral()
 
     elif opcao == "9":
         print(taxa_por_sexo(dados))
