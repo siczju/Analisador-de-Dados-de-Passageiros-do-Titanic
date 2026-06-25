@@ -36,7 +36,7 @@ while True:
         analise_titanic.exibir_total()
 
     elif opcao == "5":
-        print(estatisticas_idade(dados))
+        analise_titanic.estatisticas_idade()
 
     elif opcao == "6":
         print(estatisticas_fare(dados))
