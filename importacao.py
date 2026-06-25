@@ -5,11 +5,11 @@ import csv
 
 def dados():
 
-    if os.path.exists("train.csv"):
+    if os.path.exists("trains.csv"):
         arquivo_body = [ ]
         arquivo_title = [ ]
 
-        arquivo = open("train.csv","r")
+        arquivo = open("trains.csv","r")
 
         listas = csv.reader(arquivo)
 
