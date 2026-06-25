@@ -2,14 +2,9 @@ import importacao
 import visualizacao
 import analise_titanic
 
-cabecalho, dados = importacao.dados()
-
-if dados is None:
-    print("Arquivo train.csv não encontrado.")
-    exit()
 
 while True:
-    print("\n===== MENU TITANIC =====")
+    print("\n_-_-_-_-_-_-_-_-_- Menu do Titanic _-_-_-_-_-_-_-_-_-")
     print("1 - Exibir cabeçalho")
     print("2 - Exibir 5 primeiros passageiros")
     print("3 - Listar todos os passageiros")
