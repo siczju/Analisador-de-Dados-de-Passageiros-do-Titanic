@@ -258,3 +258,19 @@ def estatisticas_fare():
     print(f"Média de tarifas C: {tarifas_c / quantidade_tarifas_c if quantidade_tarifas_c > 0 else 0:.2f}")
     print(f"Média de tarifas Q: {tarifas_q / quantidade_tarifas_q if quantidade_tarifas_q > 0 else 0:.2f}")
     print(f"Média de tarifas S: {tarifas_s / quantidade_tarifas_s if quantidade_tarifas_s > 0 else 0:.2f}")
+
+def dados_faltantes():
+        #Identificar dados faltantes no documento
+        
+    age_vazio = 0
+    cabin_vazio = 0
+
+    for i in range(len(arquivo_body)):
+        if arquivo_body[i][5] == "":
+            age_vazio += 1
+
+        if arquivo_body[i][10] == "":
+            cabin_vazio += 1
+
+    print(f"A quantidade de registros AGE vazios na documentação é: {age_vazio}")
+    print(f"A porcentagem de passageiros sem registro de CABIN é {cabin_vazio / len(arquivo_body) * 100:.2f}%")
