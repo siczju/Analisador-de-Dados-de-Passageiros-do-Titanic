@@ -251,6 +251,26 @@ def estatisticas_fare():
         elif arquivo_body[i][11] == 'S':
             quantidade_tarifas_s += 1
             tarifas_s += float(arquivo_body[i][9]) if arquivo_body[i][9] != '' else 0
+            
+
+    if tarifas_c > tarifas_q and tarifas_q > tarifas_s:
+        print("O setor com a maior tarifa foi o C, e o com a menor foi o S")
+
+    elif tarifas_c > tarifas_s and tarifas_s > tarifas_q:
+        print("O setor com a maior tarifa foi o C, e o com a menor foi o Q")
+
+    elif tarifas_q > tarifas_c and tarifas_c > tarifas_s:
+        print("O setor com a maior tarifa foi o Q, e o com a menor foi o S")
+
+    elif tarifas_q > tarifas_s and tarifas_s > tarifas_c:
+        print("O setor com a maior tarifa foi o Q, e o com a menor foi o C")
+
+    elif tarifas_s > tarifas_c and tarifas_c > tarifas_q:
+        print("O setor com a maior tarifa foi o S, e o com a menor foi o Q")
+
+    elif tarifas_s > tarifas_q and tarifas_q > tarifas_c:
+        print("O setor com a maior tarifa foi o S, e o com a menor foi o C")
+    
 
     print(f"Tarifas C: {quantidade_tarifas_c}, Total: {tarifas_c}")
     print(f"Tarifas Q: {quantidade_tarifas_q}, Total: {tarifas_q}")
