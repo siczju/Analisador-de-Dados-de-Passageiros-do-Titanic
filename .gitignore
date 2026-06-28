@@ -1,0 +1,3 @@
+# Cache de bytecode do Python
+__pycache__/
+*.py[cod]
