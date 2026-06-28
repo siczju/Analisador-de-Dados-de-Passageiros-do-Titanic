@@ -38,16 +38,23 @@ def main():
 
         opcao = input("Escolha: ")
 
-        if opcao == "1":
+         if opcao == "1":
+            print("\n")
+            print("_________________________Cabeçalho__________________________\n")
             visualizacao.exibir_cabecalho(arquivo_title)
 
         elif opcao == "2":
+            print("\n")
+            print("_________________________Cinco Primeiros Passageiros__________________________\n")
             visualizacao.exibir_primeiros_passageiros(arquivo_body)
 
         elif opcao == "3":
+            print("\n")
+            print("_________________________Lista de Todos os passageiros__________________________\n")
             visualizacao.exibir_todos_dados(arquivo_body, arquivo_title)
 
         elif opcao == "4":
+            print("_________________________Total de Passageiros__________________________")
             analise_titanic.exibir_total(arquivo_body)
 
         elif opcao == "5":
