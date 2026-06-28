@@ -8,7 +8,9 @@ def exibir_total(arquivo_body):
     Retorno:
     - None: exibe na tela o total de passageiros.
     """
-    print(f"O total de passageiros listados é: {len(arquivo_body)}")
+
+    
+    print(f"\nO total de passageiros listados é: {len(arquivo_body)}")
 
 def estatisticas_idade(arquivo_body):
     """
@@ -45,10 +47,11 @@ def estatisticas_idade(arquivo_body):
         i += 1
         
     if quantidade_idades == 0:
-        print("Não há idades válidas para calcular as estatísticas.")
+        print("\nNão há idades válidas para calcular as estatísticas.")
         return
     
-    print(f"A média de todas idades é: {soma / quantidade_idades:.2f}")
+    print("\n__________Idade Média, Máxima e Mínima dos Passageiros___________")
+    print(f"\nA média de todas idades é: {soma / quantidade_idades:.2f}")
     print(f"A maior idade é: {maiorIdade:.2f}")
     print(f"A menor idade é: {menorIdade:.2f}")
 
@@ -87,10 +90,11 @@ def estatisticas_tarifa(arquivo_body):
         i += 1
 
     if quantidade_tarifas == 0:
-        print("Não há tarifas válidas para calcular as estatísticas.")
+        print("\nNão há tarifas válidas para calcular as estatísticas.")
         return
-
-    print(f"A média de todas as tarifas é: {soma / quantidade_tarifas:.2f}")
+    
+    print("\n___________Tarifa Média, Máxima e Mínima dos Passageiros____________")
+    print(f"\nA média de todas as tarifas é: {soma / quantidade_tarifas:.2f}")
     print(f"A maior tarifa é: {maiorTarifa:.2f}")
     print(f"A menor tarifa é: {menorTarifa:.2f}")
 
@@ -145,7 +149,7 @@ def frequencia_coluna(arquivo_body):
 
             i += 1
 
-        print(f"Pclass 1: {contadorDe1} passageiros")
+        print(f"\nPclass 1: {contadorDe1} passageiros")
         print(f"Pclass 2: {contadorDe2} passageiros")
         print(f"Pclass 3: {contadorDe3} passageiros")
 
@@ -165,7 +169,7 @@ def frequencia_coluna(arquivo_body):
 
             i += 1
 
-        print(f"Male: {contadorDeM}")
+        print(f"\nMale: {contadorDeM}")
         print(f"Female: {contadorDeF}")
 
     elif choose == 3:
@@ -188,7 +192,7 @@ def frequencia_coluna(arquivo_body):
 
             i += 1
 
-        print(f"Embarked C: {contadorDeC}")
+        print(f"\nEmbarked C: {contadorDeC}")
         print(f"Embarked Q: {contadorDeQ}")
         print(f"Embarked S: {contadorDeS}")
 
@@ -213,7 +217,7 @@ def frequencia_coluna(arquivo_body):
 
             i += 1
 
-        print(f"Survived 0: {contadorDe0}")
+        print(f"\nSurvived 0: {contadorDe0}")
         print(f"Survived 1: {contadorDe1}")
 
 def taxa_sobrevivencia_geral(arquivo_body):
@@ -349,25 +353,25 @@ def estatisticas_fare(arquivo_body):
 
 
     if tarifas_c > tarifas_q and tarifas_q > tarifas_s:
-        print("O setor com a maior tarifa foi o C, e o com a menor foi o S")
+        print("\nO setor com a maior tarifa foi o C, e o com a menor foi o S")
 
     elif tarifas_c > tarifas_s and tarifas_s > tarifas_q:
-        print("O setor com a maior tarifa foi o C, e o com a menor foi o Q")
+        print("\nO setor com a maior tarifa foi o C, e o com a menor foi o Q")
 
     elif tarifas_q > tarifas_c and tarifas_c > tarifas_s:
-        print("O setor com a maior tarifa foi o Q, e o com a menor foi o S")
+        print("\nO setor com a maior tarifa foi o Q, e o com a menor foi o S")
 
     elif tarifas_q > tarifas_s and tarifas_s > tarifas_c:
-        print("O setor com a maior tarifa foi o Q, e o com a menor foi o C")
+        print("\nO setor com a maior tarifa foi o Q, e o com a menor foi o C")
 
     elif tarifas_s > tarifas_c and tarifas_c > tarifas_q:
-        print("O setor com a maior tarifa foi o S, e o com a menor foi o Q")
+        print("\nO setor com a maior tarifa foi o S, e o com a menor foi o Q")
 
     elif tarifas_s > tarifas_q and tarifas_q > tarifas_c:
-        print("O setor com a maior tarifa foi o S, e o com a menor foi o C")
+        print("\nO setor com a maior tarifa foi o S, e o com a menor foi o C")
     
 
-    print(f"Tarifas C: {quantidade_tarifas_c}, Total: {tarifas_c}")
+    print(f"\nTarifas C: {quantidade_tarifas_c}, Total: {tarifas_c}")
     print(f"Tarifas Q: {quantidade_tarifas_q}, Total: {tarifas_q}")
     print(f"Tarifas S: {quantidade_tarifas_s}, Total: {tarifas_s}")
     print(f"Média de tarifas C: {tarifas_c / quantidade_tarifas_c if quantidade_tarifas_c > 0 else 0:.2f}")
@@ -386,7 +390,7 @@ def dados_faltantes(arquivo_body):
       porcentagem de passageiros sem informação de Cabin.
     """
     if len(arquivo_body) == 0:
-        print("Não há dados carregados para analisar.")
+        print("\nNão há dados carregados para analisar.")
         return
 
     age_vazio = 0
@@ -399,7 +403,7 @@ def dados_faltantes(arquivo_body):
         if arquivo_body[i][10] == "":
             cabin_vazio += 1
 
-    print(f"A quantidade de registros AGE vazios na documentação é: {age_vazio}")
+    print(f"\nA quantidade de registros AGE vazios na documentação é: {age_vazio}")
     print(f"A porcentagem de passageiros sem registro de CABIN é {cabin_vazio / len(arquivo_body) * 100:.2f}%")
 
 def taxa_por_sexo(arquivo_body):
@@ -436,14 +440,14 @@ def taxa_por_sexo(arquivo_body):
                     sobreviventes_m += 1
 
     if total_f > 0:
-        print(f"Taxa de sobrevivência (female): {sobreviventes_f / total_f * 100:.2f}%")
+        print(f"\nTaxa de sobrevivência (female): {sobreviventes_f / total_f * 100:.2f}%")
     else:
-        print("Taxa de sobrevivência (female): sem dados")
+        print("\nTaxa de sobrevivência (female): sem dados")
 
     if total_m > 0:
-        print(f"Taxa de sobrevivência (male): {sobreviventes_m / total_m * 100:.2f}%")
+        print(f"\nTaxa de sobrevivência (male): {sobreviventes_m / total_m * 100:.2f}%")
     else:
-        print("Taxa de sobrevivência (male): sem dados")
+        print("\nTaxa de sobrevivência (male): sem dados")
 
 def taxa_por_classe(arquivo_body):
     """
@@ -484,19 +488,19 @@ def taxa_por_classe(arquivo_body):
                     sobreviventes_classe3 += 1
 
     if total_classe1 > 0:
-        print(f"Taxa de sobrevivência da 1ª classe: {sobreviventes_classe1 / total_classe1 * 100:.2f}%")
+        print(f"\nTaxa de sobrevivência da 1ª classe: {sobreviventes_classe1 / total_classe1 * 100:.2f}%")
     else:
-        print("Taxa de sobrevivência da 1ª classe: sem dados")
+        print("\nTaxa de sobrevivência da 1ª classe: sem dados")
 
     if total_classe2 > 0:
-        print(f"Taxa de sobrevivência da 2ª classe: {sobreviventes_classe2 / total_classe2 * 100:.2f}%")
+        print(f"\nTaxa de sobrevivência da 2ª classe: {sobreviventes_classe2 / total_classe2 * 100:.2f}%")
     else:
-        print("Taxa de sobrevivência da 2ª classe: sem dados")
+        print("\nTaxa de sobrevivência da 2ª classe: sem dados")
 
     if total_classe3 > 0:
-        print(f"Taxa de sobrevivência da 3ª classe: {sobreviventes_classe3 / total_classe3 * 100:.2f}%")
+        print(f"\nTaxa de sobrevivência da 3ª classe: {sobreviventes_classe3 / total_classe3 * 100:.2f}%")
     else:
-        print("Taxa de sobrevivência da 3ª classe: sem dados")
+        print("\nTaxa de sobrevivência da 3ª classe: sem dados")
 
 def media_familiares(arquivo_body):
     """
@@ -532,10 +536,10 @@ def media_familiares(arquivo_body):
                 em_grupo += 1
 
     if total_passageiros == 0:
-        print("Não há dados válidos para analisar a composição familiar.")
+        print("\nNão há dados válidos para analisar a composição familiar.")
         return
 
-    print(f"Passageiros que viajavam sozinhos: {sozinhos}")
+    print(f"\nPassageiros que viajavam sozinhos: {sozinhos}")
     print(f"Passageiros que viajavam em grupo: {em_grupo}")
     print(f"Média de familiares a bordo: {soma_familiares / total_passageiros:.2f}")
 
@@ -578,24 +582,24 @@ def tarifas_por_porto(arquivo_body):
 
     if quantidade_c > 0:
         media_c = soma_c / quantidade_c
-        print(f"Tarifa média em C: {media_c:.2f}")
+        print(f"\nTarifa média em C: {media_c:.2f}")
     else:
         media_c = 0
-        print("Tarifa média em C: sem dados")
+        print("\nTarifa média em C: sem dados")
 
     if quantidade_q > 0:
         media_q = soma_q / quantidade_q
-        print(f"Tarifa média em Q: {media_q:.2f}")
+        print(f"\nTarifa média em Q: {media_q:.2f}")
     else:
         media_q = 0
-        print("Tarifa média em Q: sem dados")
+        print("\nTarifa média em Q: sem dados")
 
     if quantidade_s > 0:
         media_s = soma_s / quantidade_s
-        print(f"Tarifa média em S: {media_s:.2f}")
+        print(f"\nTarifa média em S: {media_s:.2f}")
     else:
         media_s = 0
-        print("Tarifa média em S: sem dados")
+        print("\nTarifa média em S: sem dados")
 
     # Descobre qual porto teve a maior tarifa média
     if media_c >= media_q and media_c >= media_s:
