@@ -38,7 +38,7 @@ def main():
 
         opcao = input("Escolha: ")
 
-         if opcao == "1":
+        if opcao == "1":
             print("\n")
             print("_________________________Cabeçalho__________________________\n")
             visualizacao.exibir_cabecalho(arquivo_title)
@@ -58,36 +58,47 @@ def main():
             analise_titanic.exibir_total(arquivo_body)
 
         elif opcao == "5":
+            print("_________________________Estatísticas de Idade__________________________")
             analise_titanic.estatisticas_idade(arquivo_body)
 
         elif opcao == "6":
+            print("_________________________Estatísticas de Tarifa por Porto__________________________")
             analise_titanic.estatisticas_fare(arquivo_body)
 
         elif opcao == "7":
+            print("_________________________Frequência por Categoria__________________________")
             analise_titanic.frequencia_coluna(arquivo_body)
 
         elif opcao == "8":
+            print("_________________________Taxa de Sobrevivência__________________________")
             analise_titanic.taxa_sobrevivencia_geral(arquivo_body)
 
         elif opcao == "9":
+            print("_________________________Taxa de Sobrevivência por Sexo__________________________")
             analise_titanic.taxa_por_sexo(arquivo_body)
 
         elif opcao == "10":
+            print("_________________________Taxa de Sobrevivência por Classe__________________________")
             analise_titanic.taxa_por_classe(arquivo_body)
 
         elif opcao == "11":
+            print("_________________________Média de Familiares__________________________")
             analise_titanic.media_familiares(arquivo_body)
 
         elif opcao == "12":
+            print("_________________________Tarifas por Porto__________________________")
             analise_titanic.tarifas_por_porto(arquivo_body)
 
         elif opcao == "13":
+            print("_________________________Dados Faltantes__________________________")
             analise_titanic.dados_faltantes(arquivo_body)
 
         elif opcao == "14":
+            print("_________________________Perfil Etário por Classe__________________________")
             analise_titanic.perfil_etario_por_classe(arquivo_body)
 
         elif opcao == "15":
+            print("_________________________Estatísticas de Tarifa__________________________")
             analise_titanic.estatisticas_tarifa(arquivo_body)
 
         elif opcao == "0":
